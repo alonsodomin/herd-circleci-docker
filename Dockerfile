@@ -2,6 +2,8 @@ FROM fpco/stack-build:lts-12.26
 
 SHELL ["/bin/bash", "-c"] 
 
+LABEL com.circleci.preserve-entrypoint=true
+
 COPY entry-point.sh /
 
 RUN sudo apt-get remove -y nodejs && \
@@ -9,5 +11,3 @@ RUN sudo apt-get remove -y nodejs && \
     /entry-point.sh nvm install node
 
 ENTRYPOINT ["/entry-point.sh"]
-
-CMD ["bash"]
