@@ -11,4 +11,5 @@ RUN sudo apt-get update -y && \
     echo 'export NVM_DIR=$HOME/.nvm' >> $BASH_ENV && \
     echo 'source $NVM_DIR/nvm.sh' >> $BASH_ENV
 
-RUN nvm install node
+RUN nvm install node && \
+    npm install -g yarn
